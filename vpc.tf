@@ -6,3 +6,10 @@ resource "google_compute_network" "vpc" {
 
     depends_on = [google_project_service.api]
 }
+
+resource "google_compute_route" "default_route" {
+    name                = "default-route"
+    dest_range          = "0.0.0.0/0"
+    network             = google.google_compute_network.vpc.name
+    next_hop_gateway    =
+}
