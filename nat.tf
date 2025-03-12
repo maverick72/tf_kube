@@ -6,7 +6,7 @@ resource "google_compute_address" "nat" {
     depends_on = [google_project_service.api]
 }
 
-resource "google_compute_route" "router" {
+resource "google_compute_router" "router" {
     name            = "router"
     region          = local.region
     network         = google_compute_network.vpc.id
