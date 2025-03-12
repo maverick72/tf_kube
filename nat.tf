@@ -12,7 +12,7 @@ resource "google_compute_route" "router" {
     network         = google_compute_network.vpc.id
 }
 
-resource "google_computer_router_nat" "nat" {
+resource "google_compute_router_nat" "nat" {
     name            = "nat"
     region          = local.region
     router          = google_compute_router.router.name
